@@ -8,16 +8,15 @@
                                 <th>Título</th>
                                 <th >Lugar</th>
                                 <th >Autor</th>
-                                <th >Ingreso</th>
-                                <th >Paginas </th>
-                                <th >Numero </th>
-
+                                <th >Fecha de Ingreso</th>
+                                <th >Número de Páginas</th>
+                                <th >Cantidad</th>
                                 <th >País </th>
-                                <th >Volumen </th>
-                                <th >Edicion </th>
-                                 <th >Temas </th>
-                                <th >Secciones </th>
-                                <th >Opciones </th>
+                                <th >Volumen</th>
+                                <th >Edición</th>
+                                <th >Temas</th>
+                                <th >Secciones</th>
+                                <th >Opciones</th>
 
                             </tr>
                             </thead>
