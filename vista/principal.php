@@ -4,7 +4,7 @@
 <div class="col-md-12 text-center">
 
     <legend class="primary">
-        Laboratorio Computación el el Servidor Web
+        Laboratorio de Computación en el Servidor Web
         
     </legend>
 </div>
