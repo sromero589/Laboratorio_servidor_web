@@ -26,20 +26,20 @@
                         <input type="hidden" name="codigo" value="<?php echo $alm->codigo; ?>" />
 
                         <div class="form-group">
-                            <label for="nomb">Titulo</label>
-                            <input value="<?php echo $alm->titulo; ?>" required type="text" name="titulo" class="form-control" id="nomb" placeholder="Ingrese el Título de la revista">
+                            <label for="nomb">Título</label>
+                            <input value="<?php echo $alm->titulo; ?>" required type="text" name="titulo" class="form-control" id="nomb" placeholder="Ingrese el título de la revista">
                         </div>
 
                         <div class="form-group">
                             <label for="nomb">Lugar</label>
-                            <input type="text" name="lugar" value="<?php echo $alm->lugar; ?>" class="form-control" placeholder="Ingrese el Lugar" data-validacion-tipo="requerido|min:8" />
+                            <input type="text" name="lugar" value="<?php echo $alm->lugar; ?>" class="form-control" placeholder="Ingrese el lugar" data-validacion-tipo="requerido|min:8" />
 
                         </div>
 
 
                         <div class="form-group">
                             <label for="direc">Autor</label>
-                            <input type="text" name="autor" value="<?php echo $alm->autor; ?>" class="form-control" placeholder="Ingrese el Autor de la revista" data-validacion-tipo="requerido|min:8" />
+                            <input type="text" name="autor" value="<?php echo $alm->autor; ?>" class="form-control" placeholder="Ingrese el autor de la revista" data-validacion-tipo="requerido|min:8" />
 
                         </div>
 
@@ -52,22 +52,21 @@
                         </div>
 
 
-
                         <div class="form-group">
-                            <label>Número de páginas</label>
-                            <input type="number" name="paginas" value="<?php echo $alm->numpaginas; ?>" class="form-control" placeholder="Ingrese el numero de paginas" data-validacion-tipo="requerido" />
+                            <label>Número de Páginas</label>
+                            <input type="number" name="paginas" value="<?php echo $alm->numpaginas; ?>" class="form-control" placeholder="Ingrese el número de páginas" data-validacion-tipo="requerido" />
 
 
                         </div>
                         <div class="form-group">
                             <label>País</label>
-                            <input type="text" name="pais" value="<?php echo $alm->pais; ?>" class="form-control" placeholder="Ingrese el pais" data-validacion-tipo="requerido" required />
+                            <input type="text" name="pais" value="<?php echo $alm->pais; ?>" class="form-control" placeholder="Ingrese el país" data-validacion-tipo="requerido" required />
 
 
                         </div>
                         <div class="form-group">
-                            <label>Número</label>
-                            <input type="number" name="numero" value="<?php echo $alm->numero; ?>" class="form-control" placeholder="Ingrese el numero" data-validacion-tipo="requerido" />
+                            <label>Cantidad</label>
+                            <input type="number" name="numero" value="<?php echo $alm->numero; ?>" class="form-control" placeholder="Ingrese la cantidad" data-validacion-tipo="requerido" />
 
                             <hr />
                         </div>
@@ -82,7 +81,7 @@
 
                         <div class="form-group">
                             <label>Fecha de Edición</label>
-                            <input type="date" name="fechaedicion" value="<?php echo $alm->fechaEdicion; ?>" class="form-control" placeholder="Ingrese la feha de edicion" data-validacion-tipo="requerido" />
+                            <input type="date" name="fechaedicion" value="<?php echo $alm->fechaEdicion; ?>" class="form-control" placeholder="Ingrese la feha de edición" data-validacion-tipo="requerido" />
 
 
                         </div>
@@ -90,14 +89,14 @@
 
                         <div class="form-group">
                             <label>Temas</label>
-                            <input type="text" name="temas" value="<?php echo $alm->temas; ?>" class="form-control" placeholder="Ingrese el tema de la revista" data-validacion-tipo="requerido" />
+                            <input type="text" name="temas" value="<?php echo $alm->temas; ?>" class="form-control" placeholder="Ingrese los temas de la revista" data-validacion-tipo="requerido" />
 
 
                         </div>
 
                         <div class="form-group">
-                            <label>Seccion</label>
-                            <input type="text" name="secciones" value="<?php echo $alm->secciones; ?>" class="form-control" placeholder="Ingrese la seccion de la revista" data-validacion-tipo="requerido" />
+                            <label>Secciones</label>
+                            <input type="text" name="secciones" value="<?php echo $alm->secciones; ?>" class="form-control" placeholder="Ingrese las secciones de la revista" data-validacion-tipo="requerido" />
 
 
                         </div>

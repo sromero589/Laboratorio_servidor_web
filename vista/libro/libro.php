@@ -1,4 +1,21 @@
-<!-- Html para Listar Libro -->
+            <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th >Lugar</th>
+                                <th >Autor</th>
+                                <th >Fecha de Ingreso</th>
+                                <th >Número de Páginas</th>
+                                <th >Cantidad</th>
+                                <th >País</th>
+                                <th >Edición</th>
+                                <th >Editorial</th>
+                                 <th >Capítulos</th>
+                                <th >Opciones</th>
 
 <div class="row">
     <div class="col-md-12">
@@ -58,10 +75,10 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        function ConfirmDelete($id)
-        {
-            if (confirm("Seguro de eliminar este registro"))
-                location.href = '?c=Libro&a=Eliminar&id=' + $id;
-        }
-    </script>
+                <script type="text/javascript">
+                    function ConfirmDelete($id)
+                    {
+                        if (confirm("Seguro de eliminar este registro"))
+                            location.href='?c=Libro&a=Eliminar&id='+$id;
+                    }
+                </script>
