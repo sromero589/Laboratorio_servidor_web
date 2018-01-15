@@ -10,13 +10,11 @@
                 <div class="container-fluid text-center text-light bg-dark rounded bottom">
                     <div class="row">
                         <div class="col-md-8">
-                            <ins> <i>   Santiago Romero &copy. Todos Los derechos reservados</i></ins>
-                            <br /><i>Sígueme en Twitter o Envíame un correo</i>
-                            <a href="mailto:sromero589@hotmail.com" > Correo Santiago </a>
-                            <a href="https://twitter.com/sromero589"> @sromero589 </a>
+                            <ins> <i>   Grupo # 3 &copy. Todos Los derechos reservados</i></ins>
+                            <br /><i>Pamela Buñay, Santiago Romero, Paúl Paguay y Juan Urgilés</i>
                         </div>
                         <div class="col-md-4">
-                            <img src="estilo/logo.png" alt="" height="100" width="100" />
+                            <img src="estilo/logo.png" alt="" height="90" width="200" />
                         </div>
                     </div>
                 </div>
