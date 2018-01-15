@@ -1,5 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-    <head>
+<!-- Html Header -->
+
+<head>
 		<title>Biblioteca</title>
         <meta name="author" content="Santiago Romero">
 		<meta name="description" content="Mi primera p�gina web">

@@ -5,7 +5,7 @@ require_once 'modelo/basededatos.php';
 
 $controller = $_GET["c"];
 
-// Todo esta l�gica har� el papel de un FrontController
+// Todo esta lógica hará el papel de un FrontController
 if (!isset($_REQUEST['c'])) {
     require_once "controlador/$controller.controlador.php";
     $controller = ucwords($controller) . 'Controlador';

@@ -1,4 +1,4 @@
-<!-- Page Heading -->
+<!-- Html para Edición de Libro -->
 <div class="row">
     <div class="col-lg-10 offset-md-1">
         <ol class="breadcrumb">

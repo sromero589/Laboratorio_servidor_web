@@ -1,11 +1,16 @@
 <?php
-class BasedeDatos
-{
-    public static function Conectar()
-    {
+
+class BasedeDatos {
+
+    /**
+     * Función utilizada  la conexión a la base de datos
+     *
+     * @return void
+     */
+    public function Conectar() {
         $conexion = mysqli_connect("127.0.0.1", "root", "", "biblioteca");
 
         return $conexion;
-        
     }
+
 }

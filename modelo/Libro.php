@@ -1,23 +1,15 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of Libro
+ * Clase Libro hereda de Documento
  *
  * @author casa
  */
-
 require_once 'modelo/Documento.php';
 
 class Libro extends Documento {
-    //put your code here
 
-
+    //atributos de Documento
 
     public $edicion;
     public $editorial;
@@ -25,37 +17,42 @@ class Libro extends Documento {
 
     function __construct() {
         parent::__construct();
-
     }
-     
-     function getCapitulos() {
-         return $this->capitulos;
-     }
 
-     function setCapitulos($capitulos) {
-         $this->capitulos = $capitulos;
-     }
+    /**
+     * Getters y Setters
+     *
+     */
+    function getCapitulos() {
+        return $this->capitulos;
+    }
 
-          function getEdicion() {
-         return $this->edicion;
-     }
+    function setCapitulos($capitulos) {
+        $this->capitulos = $capitulos;
+    }
 
-     function getEditorial() {
-         return $this->editorial;
-     }
+    function getEdicion() {
+        return $this->edicion;
+    }
 
-     function setEdicion($edicion) {
-         $this->edicion = $edicion;
-     }
+    function getEditorial() {
+        return $this->editorial;
+    }
 
-     function setEditorial($editorial) {
-         $this->editorial = $editorial;
-     }
+    function setEdicion($edicion) {
+        $this->edicion = $edicion;
+    }
 
+    function setEditorial($editorial) {
+        $this->editorial = $editorial;
+    }
 
-    
-    public function Listar()
-    {
+    /**
+     * Función para Listar una Revista
+     * 
+     * 
+     */
+    public function Listar() {
         try {
             $query = "SELECT d.codigo, d.titulo, d.lugar, d.autor, d.fechaingreso,
             d.numpaginas, d.pais, d.numero, r.edicion,r.editorial, r.capitulos
@@ -78,8 +75,12 @@ class Libro extends Documento {
         }
     }
 
-    public function Obtener($id)
-    {
+    /**
+     * Función para Obtener una Revista
+     * @param  String $data Codigo de Revista
+     * @return StdObject  Revista
+     */
+    public function Obtener($id) {
         try {
             foreach ($this->Listar() as $obj) {
                 if ($obj->codigo == $id) {
@@ -87,27 +88,33 @@ class Libro extends Documento {
                     return $obj;
                 }
             }
-
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
 
-    public function Eliminar($id)
-    {
+    /**
+     * Función para Eliminar una Revista
+     * @param  String $id Codigo de Revista
+     * 
+     */
+    public function Eliminar($id) {
         try {
 
             $stmt = $this->mysqli->prepare("DELETE FROM documento WHERE codigo = ?");
             $stmt->bind_param('i', $id);
             ($stmt->execute());
-
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
 
-    public function Actualizar($data)
-    {
+    /**
+     * Función para Actualizar una Revista
+     * @param  Revista $data Codigo de Revista
+     * 
+     */
+    public function Actualizar($data) {
         try {
 
 
@@ -124,9 +131,7 @@ class Libro extends Documento {
             $stmt = $this->mysqli->prepare($sql);
 
             $stmt->bind_param(
-                'ssssisii',
-                $data->getTitulo(), $data->getLugar(), $data->getAutor(),
-                $data->getFechaingreso(), $data->getNumpaginas(), $data->getPais(), $data->getNumero(), $data->getCodigo()
+                    'ssssisii', $data->getTitulo(), $data->getLugar(), $data->getAutor(), $data->getFechaingreso(), $data->getNumpaginas(), $data->getPais(), $data->getNumero(), $data->getCodigo()
             );
             $stmt->execute();
 
@@ -140,8 +145,7 @@ class Libro extends Documento {
 
             $stmt = $this->mysqli->prepare($sql);
             $stmt->bind_param(
-                'sssi',
-                $data->getEdicion(), $data->getEditorial(), $data->getCapitulos(), $data->getCodigo()
+                    'sssi', $data->getEdicion(), $data->getEditorial(), $data->getCapitulos(), $data->getCodigo()
             );
             $stmt->execute();
         } catch (Exception $e) {
@@ -149,38 +153,42 @@ class Libro extends Documento {
         }
     }
 
-    public function Registrar($data)
-    {
+    /**
+     * Función para Ingresar una Revista
+     * @param  Revista $data Codigo de Revista
+     * 
+     */
+    public function Registrar($data) {
         try {
-            $sql = "INSERT INTO documento
-		        VALUES (?, ?, ?, ?, ?, ?,?,?)";
-            $stmt = $this->mysqli->prepare($sql);
-            $stmt->bind_param(
-                'issssisi',
-                $data->getCodigo(), $data->getTitulo(), $data->getLugar(), $data->getAutor(),
-                $data->getFechaingreso(), $data->getNumpaginas(), $data->getPais(), $data->getNumero()
-            );
+            $arr = (array) $data;
+
+            $columnas = array_keys($arr);
+            echo implode(',', $columnas);
+            $data = implode("','", $arr);
+
+
+            $sql = "INSERT INTO documento ($columnas)
+		        VALUES ('$data')";
+            $stmt = $this->mysqli->query($sql);
+
 
             $stmt->execute();
-            $asd=($stmt->insert_id);
-            $asd=($stmt->insert_id);
+            $asd = ($stmt->insert_id);
+            $asd = ($stmt->insert_id);
             //var_dump($data);
             //die($asd);
             $sql = "INSERT INTO libro
             VALUES (?, ?, ?, ?)";
             $stmta = $this->mysqli->prepare($sql);
-             $stmta->bind_param(
-                'isss',
-                 $asd,$data->edicion, $data->editorial, $data->capitulos
+            $stmta->bind_param(
+                    'isss', $asd, $data->edicion, $data->editorial, $data->capitulos
             );
-            $a=$stmta->execute();
+            $a = $stmta->execute();
             // var_dump($stmta);
-            //die($a);
+            //die($a);*/
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
-
-
 
 }

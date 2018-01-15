@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of Articulo
+ * Clase Documento
  *
  * @author casa
  */
@@ -23,11 +23,11 @@ class Documento {
     public $pais;
     public $numero;
     public $mysqli;
+
     /**
-     * Documento constructor.
+     * Constructor de la clase, genera conexión base de datos.
      */
-    public function __construct()
-    {
+    public function __construct() {
 
         try {
             $this->mysqli = BasedeDatos::Conectar();
@@ -36,7 +36,12 @@ class Documento {
         }
     }
 
-    public  function getCodigo() {
+    /**
+     * Getters y Setters
+     *
+     * @return void
+     */
+    public function getCodigo() {
         return $this->codigo;
     }
 
@@ -99,7 +104,5 @@ class Documento {
     function setNumero($numero) {
         $this->numero = $numero;
     }
-
-
 
 }
