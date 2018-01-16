@@ -2,14 +2,13 @@
 
 /**
  * Clase Libro hereda de Documento
- *
- * @author casa
+ * 
  */
 require_once 'modelo/Documento.php';
 
 class Libro extends Documento {
 
-    //atributos de Documento
+    //atributos únicos de Libro
 
     public $edicion;
     public $editorial;
@@ -48,7 +47,7 @@ class Libro extends Documento {
     }
 
     /**
-     * Función para Listar una Revista
+     * Función para listar una revista
      * 
      * 
      */
@@ -62,7 +61,7 @@ class Libro extends Documento {
 
             if ($resultado = $this->mysqli->query($query)) {
 
-                /* obtener el array de objetos */
+                /* obtiene el array de objetos */
                 while ($obj = $resultado->fetch_object()) {
                     array_push($arr, $obj);
                 }
@@ -76,9 +75,8 @@ class Libro extends Documento {
     }
 
     /**
-     * Función para Obtener una Revista
-     * @param  String $data Codigo de Revista
-     * @return StdObject  Revista
+     * Función para obtener una revista
+     * 
      */
     public function Obtener($id) {
         try {
@@ -94,8 +92,7 @@ class Libro extends Documento {
     }
 
     /**
-     * Función para Eliminar una Revista
-     * @param  String $id Codigo de Revista
+     * Función para eliminar una revista
      * 
      */
     public function Eliminar($id) {
@@ -110,23 +107,20 @@ class Libro extends Documento {
     }
 
     /**
-     * Función para Actualizar una Revista
-     * @param  Revista $data Codigo de Revista
+     * Función para actualizar una revista
      * 
      */
     public function Actualizar($data) {
         try {
-
-
             $sql = "UPDATE documento SET
-						titulo          = ?,
-						lugar        = ?,
+			titulo          = ?,
+			lugar        = ?,
                         autor = ?,
                         fechaingreso        = ?,
                         numpaginas = ?,
                         pais = ?,
                         numero = ?
-				    WHERE codigo = ?";
+		    WHERE codigo = ?";
 
             $stmt = $this->mysqli->prepare($sql);
 
@@ -134,7 +128,6 @@ class Libro extends Documento {
                     'ssssisii', $data->getTitulo(), $data->getLugar(), $data->getAutor(), $data->getFechaingreso(), $data->getNumpaginas(), $data->getPais(), $data->getNumero(), $data->getCodigo()
             );
             $stmt->execute();
-
 
 
             $sql = "UPDATE libro SET
@@ -154,8 +147,7 @@ class Libro extends Documento {
     }
 
     /**
-     * Función para Ingresar una Revista
-     * @param  Revista $data Codigo de Revista
+     * Función para ingresar una revista
      * 
      */
     public function Registrar($data) {
@@ -175,8 +167,6 @@ class Libro extends Documento {
             $stmt->execute();
             $asd = ($stmt->insert_id);
             $asd = ($stmt->insert_id);
-            //var_dump($data);
-            //die($asd);
             $sql = "INSERT INTO libro
             VALUES (?, ?, ?, ?)";
             $stmta = $this->mysqli->prepare($sql);
@@ -184,8 +174,6 @@ class Libro extends Documento {
                     'isss', $asd, $data->edicion, $data->editorial, $data->capitulos
             );
             $a = $stmta->execute();
-            // var_dump($stmta);
-            //die($a);*/
         } catch (Exception $e) {
             die($e->getMessage());
         }
