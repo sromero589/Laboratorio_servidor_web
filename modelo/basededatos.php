@@ -3,7 +3,7 @@
 class BasedeDatos {
 
     /**
-     * Función utilizada  la conexión a la base de datos
+     * Función utilizada para establecer la conexión a la base de datos
      *
      * @return void
      */
