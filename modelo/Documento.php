@@ -1,19 +1,11 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Clase Documento
  *
- * @author casa
  */
 class Documento {
 
-    //put your code here
     public $codigo;
     public $titulo;
     public $lugar;
@@ -25,7 +17,7 @@ class Documento {
     public $mysqli;
 
     /**
-     * Constructor de la clase, genera conexión base de datos.
+     * Constructor de la clase, genera la conexión con la base de datos.
      */
     public function __construct() {
 
