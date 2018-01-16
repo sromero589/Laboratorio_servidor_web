@@ -11,12 +11,12 @@
                             <th >Lugar</th>
                             <th >Autor</th>
                             <th >Ingreso</th>
-                            <th >Paginas </th>
-                            <th >Numero </th>
+                            <th >Páginas </th>
+                            <th >Número </th>
                             <th >País </th>
-                            <th >Edicion </th>
+                            <th >Edición </th>
                             <th >Editorial </th>
-                            <th >Capitulos </th>
+                            <th >Capítulos </th>
                             <th >Opciones </th>
 
                         </tr>
