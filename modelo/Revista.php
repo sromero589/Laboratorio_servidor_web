@@ -5,11 +5,10 @@ require_once 'modelo/Documento.php';
 /**
  * Clase Revista hereda de Documento
  *
- * @author casa
  */
 class Revista extends Documento {
 
-    //Atributos de la Clase Revista
+    //Atributos únicos de la Clase Revista
     public $volumen;
     public $fechaEdicion;
     public $temas;
@@ -19,8 +18,8 @@ class Revista extends Documento {
         parent::__construct();
     }
 /**
- * Función para listar las revistas
- * @return $array 
+ * Función para listar la revista
+ *  
  */
     public function Listar() {
         try {
@@ -45,9 +44,8 @@ class Revista extends Documento {
         }
     }
 /**
- * Función para recuperar una Revista
- * @param  String $id Codigo de Revista
- * @return $array 
+ * Función para recuperar una revista
+ * 
  */
     public function Obtener($id) {
         try {
@@ -62,8 +60,7 @@ class Revista extends Documento {
         }
     }
 /**
- * Función para eliminar una Revista
- * @param  String $id Codigo de Revista
+ * Función para eliminar una revista
  * 
  */
     public function Eliminar($id) {
@@ -77,8 +74,7 @@ class Revista extends Documento {
         }
     }
 /**
- * Función para Actualizar una Revista
- * @param  Revista $data Codigo de Revista
+ * Función para actualizar una revista
  * 
  */
     public function Actualizar($data) {
@@ -93,7 +89,7 @@ class Revista extends Documento {
                         numpaginas = ?,
                         pais = ?,
                         numero = ?
-				    WHERE codigo = ?";
+		    WHERE codigo = ?";
 
             $stmt = $this->mysqli->prepare($sql);
 
@@ -101,8 +97,6 @@ class Revista extends Documento {
                     'ssssisii', $data->getTitulo(), $data->getLugar(), $data->getAutor(), $data->getFechaingreso(), $data->getNumpaginas(), $data->getPais(), $data->getNumero(), $data->getCodigo()
             );
             $stmt->execute();
-
-
 
             $sql = "UPDATE revista SET
             volumen          = ?,
@@ -121,8 +115,7 @@ class Revista extends Documento {
         }
     }
 /**
- * Función para Insertar una Revista
- * @param  Revista $data Codigo de Revista
+ * Función para insertar una Revista
  * 
  */
     public function Registrar($data) {

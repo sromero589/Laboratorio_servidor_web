@@ -11,7 +11,7 @@ class LibroControlador {
     }
 
     /**
-     * Función utilizada  cargar los componentes de html para Lista de libros
+     * Función utilizada para cargar los componentes del html para libros
      *
      * @return html
      */
@@ -22,7 +22,7 @@ class LibroControlador {
     }
 
     /**
-     * Función utilizada  cargar los componentes de Edición html para  libros
+     * Función utilizada para cargar los componentes de edición del html para libros
      *
      * @return html
      */
@@ -39,7 +39,7 @@ class LibroControlador {
     }
 
     /**
-     * Función utilizada  recuperar del formlario  de html y guardar un libro
+     * Función utilizada para recuperar los datos ingresados en el formulario html y guardar el libro en la base de datos
      *
      * @return void
      */
@@ -58,14 +58,12 @@ class LibroControlador {
         $alm->setEditorial($_REQUEST['editorial']);
         $alm->setCapitulos($_REQUEST['capitulos']);
 
-        //var_dump($alm);
-        // die();
         $alm->getCodigo() > 0 ? $this->model->Actualizar($alm) : $this->model->Registrar($alm);
 
         header('Location: redirec.php?c=libro');
     }
 /**
-     * Función utilizada  eliminar un libro y redireccionar
+     * Función utilizada para eliminar un libro y redireccionar al html libro
      *
      * @return void
      */
