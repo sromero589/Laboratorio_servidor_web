@@ -7,7 +7,8 @@
 
     <legend class="primary">
         Laboratorio de Computación en el Servidor Web
-        
+        <br />
+        <img src="estilo/libro.jpg" title="Biblioteca" />
     </legend>
 </div>
 
