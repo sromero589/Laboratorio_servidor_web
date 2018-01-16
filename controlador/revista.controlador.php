@@ -10,7 +10,7 @@ class RevistaControlador {
         $this->model = new Revista();
     }
 /**
-     * Función utilizada  cargar los componentes de html para Lista de Revistas
+     * Función utilizada para cargar los componentes del html para revistas
      *
      * @return html
      */
@@ -20,7 +20,7 @@ class RevistaControlador {
         require_once 'vista/footer.php';
     }
 /**
-     * Función utilizada  cargar el html para edición de Revista
+     * Función utilizada para cargar los componentes de edición del html para revistas
      *
      * @return void
      */
@@ -37,7 +37,7 @@ class RevistaControlador {
         require_once 'vista/footer.php';
     }
 /**
-     * Función utilizada  guardar un Libro
+     * Función utilizada para recuperar los datos ingresados en el formulario html y guardar la revista en la base de datos
      *
      * @return html
      */
@@ -62,7 +62,7 @@ class RevistaControlador {
         header('Location: redirec.php?c=revista');
     }
 /**
-     * Función utilizada  cargar los componentes de html eliminar una Revista
+     * Función utilizada para eliminar una revista y redireccionar al html revista
      *
      * @return void
      */
